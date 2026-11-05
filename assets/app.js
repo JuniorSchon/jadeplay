@@ -18,6 +18,33 @@
     });
   });
 
+  // Contagem de downloads: o GitHub registra quantas vezes cada APK das Releases foi baixado.
+  const downloadsByCode = {};
+  const fmtNum = (n) => n.toLocaleString('pt-BR');
+  const showCounts = () => {
+    document.querySelectorAll('[data-dl-code]').forEach((el) => {
+      const n = downloadsByCode[el.dataset.dlCode];
+      if (n !== undefined) el.textContent = `⬇ ${fmtNum(n)} download${n === 1 ? '' : 's'}`;
+    });
+  };
+  fetch('https://api.github.com/repos/JuniorSchon/jadeplay/releases?per_page=100')
+    .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+    .then((releases) => {
+      let total = 0;
+      releases.forEach((rel) => {
+        const n = (rel.assets || [])
+          .filter((a) => a.name.toLowerCase().endsWith('.apk'))
+          .reduce((sum, a) => sum + a.download_count, 0);
+        total += n;
+        const m = /-(\d+)$/.exec(rel.tag_name || ''); // tag "v1.0-4" -> versionCode 4
+        if (m) downloadsByCode[m[1]] = (downloadsByCode[m[1]] || 0) + n;
+      });
+      $('#downloads-total').textContent = fmtNum(total);
+      $('#downloads').hidden = false;
+      showCounts();
+    })
+    .catch(() => { /* sem contagem (ex.: limite da API atingido): a página funciona normalmente */ });
+
   fetch('version.json', { cache: 'no-store' })
     .then((r) => r.json())
     .then((v) => {
@@ -32,10 +59,11 @@
       $('#changelog').innerHTML = history.map((h, i) => `
         <div class="entry">
           <h3>Versão ${esc(h.versionName)} (${esc(h.versionCode)})${i === 0 ? '<span class="badge">ATUAL</span>' : ''}</h3>
-          <time>${fmtDate(h.date)}</time>
+          <time>${fmtDate(h.date)}</time><span class="dl-count" data-dl-code="${esc(h.versionCode)}"></span>
           <ul>${(h.notes || []).map((n) => `<li>${esc(n)}</li>`).join('')}</ul>
         </div>`).join('') +
         (v.certSha256 ? `<p class="sub" style="margin-top:8px">Impressão digital (SHA-256) do certificado de assinatura:<br><span class="mono">${esc(v.certSha256)}</span></p>` : '');
+      showCounts(); // caso a contagem tenha chegado antes do histórico
     })
     .catch(() => {
       $('#install-version').textContent = 'veja a página de Releases';

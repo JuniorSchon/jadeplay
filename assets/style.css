@@ -67,6 +67,13 @@ nav.links a:hover { color: var(--text); }
 .cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
 .release-meta { margin-top: 14px; color: var(--muted); font-size: .92rem; }
 .release-meta strong { color: var(--text); }
+.downloads {
+  display: inline-flex; align-items: baseline; gap: 8px; margin: 18px 0 0;
+  background: rgba(52, 211, 153, .1); border: 1px solid rgba(52, 211, 153, .35);
+  padding: 8px 16px; border-radius: 999px; color: var(--muted); font-weight: 600;
+}
+.downloads .num { color: var(--green); font-size: 1.35rem; font-weight: 800; }
+.dl-count { color: var(--green); font-weight: 700; font-size: .88rem; margin-left: 10px; }
 .hero-shots { position: relative; height: 520px; }
 .hero-shots img {
   position: absolute; width: 230px; border-radius: 22px;
