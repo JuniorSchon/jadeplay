@@ -1,0 +1,34 @@
+{
+    "versionCode":  4,
+    "versionName":  "1.0",
+    "date":  "2026-11-05",
+    "size":  10041947,
+    "sha256":  "92627e7c465aff9d9229ed43a6c51464c4ab2bda6452703ec50ed30177e676bb",
+    "certSha256":  "513b61172bc3529d027d4877566740484a3e8867a953a6edcdbff5465fa0c616",
+    "minAndroid":  "7.0",
+    "url":  "https://github.com/JuniorSchon/jadeplay/releases/download/v1.0-4/JadePlay.apk",
+    "latestUrl":  "https://github.com/JuniorSchon/jadeplay/releases/latest/download/JadePlay.apk",
+    "siteUrl":  "https://juniorschon.github.io/jadeplay/",
+    "shortUrl":  "https://juniorschon.github.io/jadeplay/",
+    "notes":  [
+                  "Primeira versão pública do Jade Play",
+                  "TV ao vivo, filmes e séries organizados por categoria, com capas e sinopses",
+                  "Perfis com Minha lista e Continuar assistindo",
+                  "Séries longas com numeração corrigida (ex.: novelas com mais de 300 capítulos)",
+                  "Aviso de nova versão dentro do app"
+              ],
+    "history":  [
+                    {
+                        "versionCode":  4,
+                        "versionName":  "1.0",
+                        "date":  "2026-11-05",
+                        "notes":  [
+                                      "Primeira versão pública do Jade Play",
+                                      "TV ao vivo, filmes e séries organizados por categoria, com capas e sinopses",
+                                      "Perfis com Minha lista e Continuar assistindo",
+                                      "Séries longas com numeração corrigida (ex.: novelas com mais de 300 capítulos)",
+                                      "Aviso de nova versão dentro do app"
+                                  ]
+                    }
+                ]
+}
