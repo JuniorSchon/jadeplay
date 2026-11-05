@@ -1,19 +1,29 @@
 {
-    "versionCode":  6,
+    "versionCode":  7,
     "versionName":  "1.0",
     "date":  "2026-11-05",
-    "size":  10041943,
-    "sha256":  "de8e707d5a72efc84f399360978270d08b7ca558d471b526841dd674b27433fc",
+    "size":  10041947,
+    "sha256":  "9a67a86bc26dc757e7b67054e59aa73ece60d5980f154fc17f4a15f15d57d5f0",
     "certSha256":  "513b61172bc3529d027d4877566740484a3e8867a953a6edcdbff5465fa0c616",
     "minAndroid":  "7.0",
-    "url":  "https://github.com/JuniorSchon/jadeplay/releases/download/v1.0-6/JadePlay.apk",
+    "url":  "https://github.com/JuniorSchon/jadeplay/releases/download/v1.0-7/JadePlay.apk",
     "latestUrl":  "https://github.com/JuniorSchon/jadeplay/releases/latest/download/JadePlay.apk",
     "siteUrl":  "https://juniorschon.github.io/jadeplay/",
     "shortUrl":  "https://juniorschon.github.io/jadeplay/",
     "notes":  [
-                  "Categorias de Ao vivo, Filmes e Séries em ordem alfabética"
+                  "Ao vivo: Jogos do Dia e eventos aparecem primeiro",
+                  "Versão do app e botão Verificar atualizações nas Configurações"
               ],
     "history":  [
+                    {
+                        "versionCode":  7,
+                        "versionName":  "1.0",
+                        "date":  "2026-11-05",
+                        "notes":  [
+                                      "Ao vivo: Jogos do Dia e eventos aparecem primeiro",
+                                      "Versão do app e botão Verificar atualizações nas Configurações"
+                                  ]
+                    },
                     {
                         "versionCode":  6,
                         "versionName":  "1.0",
